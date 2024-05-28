@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "clang": "^1.0.9",
     "iostream": "^0.0.3"
   }
 }

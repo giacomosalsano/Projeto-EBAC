@@ -1,7 +1,6 @@
 #include <stdio.h> //Biblioteca de comunicação com o Usuário
 #include <stdlib.h> //Biblioteca de alocação de espaço e memória
 #include <locale.h> //Biblioteca de alocações de texto por região
-#include <iostream>
 
 
 int main()
