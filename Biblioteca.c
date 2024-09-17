@@ -11,9 +11,6 @@ int main()
   int laco=1;
   char* nomeDoUdsuario;
 
-  
-
-
   for(laco=1;laco==1;) {
 
     // system("clear"); //Limpar a tela 
