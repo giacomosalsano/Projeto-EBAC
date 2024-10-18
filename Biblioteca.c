@@ -31,6 +31,11 @@ int verificar_arquivo_existe(const char *cpf) {
     return 0; // Arquivo não existe
 }
 
+void sair() {
+    system("clear"); // Limpar a tela
+    printf("Opção escolhida: Sair.\n");
+}
+
 void registrar() {
   char cpf[40];
   char nome[40];
@@ -38,7 +43,7 @@ void registrar() {
   char cargo[40];
 
   system("clear"); // Limpar a tela
-  printf("\033[1mOpção escolhida:\033[0m Registrar nomes.\n\n");
+  printf("\033[1mRegistrar usuário:\033[0m\n\n");
 
   printf("\033[1mDigite o CPF a ser cadastrado: \033[0m");
   scanf("%s", cpf);
@@ -60,7 +65,7 @@ void registrar() {
       return;
   }
 
-  fprintf(file, "# Registro de Usuário:\n\n");  
+  fprintf(file, "#Dados do usuário:\n\n");  
   fprintf(file, "**CPF:** %s;\n", cpf);  // Salva o valor da variável "cpf"
   fclose(file); // Fecha o arquivo
 
@@ -92,19 +97,63 @@ void registrar() {
 }
 
 void consultar() {
-    system("clear"); // Limpar a tela
-    printf("Opção escolhida: Consultar nomes.\n");
+  char cpf[40];
+  char conteudo[1000];
+  int opcaoUsuario = 0;
+  int laco_consultar = 1;
+
+  system("clear"); // Limpar a tela
+  printf("\033[1mConsultar usuário:\033[0m\n\n");
+
+  printf("\033[1mDigite o CPF que você quer consultar: \033[0m");
+  scanf("%s", cpf);
+
+  char arquivo[45];
+  sprintf(arquivo, "%s.md", cpf); 
+
+  FILE *file = fopen(arquivo, "r"); // Abre o arquivo para leitura "r"
+
+  if (file == NULL)
+  {
+      printf("\033[1mUsuário inexistente\033[0m\n");
+      printf("\033[1mRegistrar novo usuário?\033[0m\n");
+        while (laco_consultar == 1) {
+          printf("\t1 - Sim.\n");
+          printf("\t2 - Não.\n");
+          printf("\nOpção: ");
+          scanf("%d", &opcaoUsuario);
+
+          if (opcaoUsuario == 1) {
+              system("clear");
+              registrar();
+              laco_consultar = 0;
+          } else if (opcaoUsuario == 2) {
+              system("clear");
+              sair();
+              laco_consultar = 0;
+          } else {
+              printf("\nOpção inválida. Tente novamente.\n");
+              printf("\033[1mRegistrar novo usuário?\033[0m\n");
+
+          }
+        }
+
+  }
+
+  while (fgets(conteudo, 1000, file) != NULL) {
+      printf("%s", conteudo);
+  }
+
+
+
+
 }
 
 void deletar() {
     system("clear"); // Limpar a tela
-    printf("Opção escolhida: Deletar nomes.\n");
+    printf("\033[1mDeletar usuário:\033[0m\n\n");
 }
 
-void sair() {
-    system("clear"); // Limpar a tela
-    printf("Opção escolhida: Sair.\n");
-}
 
 int main() {
     int opcaoUsuario = 0;
@@ -118,9 +167,9 @@ int main() {
         printf("\n###### Cartório da EBAC ######\n\n");
 
         printf("Olá, seja bem-vindo(a)!\nEscolha a opção desejada do menu:\n");
-        printf("\t1 - Registrar nomes;\n");
-        printf("\t2 - Consultar nomes;\n");
-        printf("\t3 - Deletar nomes;\n");
+        printf("\t1 - Registrar usuário;\n");
+        printf("\t2 - Consultar usuário;\n");
+        printf("\t3 - Deletar usuário;\n");
         printf("\t4 - Sair.\n");
 
         printf("\nOpção: ");
