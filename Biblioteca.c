@@ -5,7 +5,7 @@
 
 
 void aguardarEnter() {
-    printf("\nPressione Enter para continuar...");
+    printf("\nPressione Enter para voltar ao Menu...");
     getchar();  // Limpa o buffer do scanf anterior
     getchar();  // Espera o Enter
 }
@@ -140,7 +140,7 @@ void consultar() {
 
   }
 
-  while (fgets(conteudo, 1000, file) != NULL) {
+  while (fgets(conteudo, sizeof(conteudo), file) != NULL) {
       printf("%s", conteudo);
   }
 
