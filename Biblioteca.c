@@ -148,8 +148,32 @@ void consultar() {
 }
 
 void deletar() {
-    system("clear"); // Limpar a tela
-    printf("\033[1mDeletar usuário:\033[0m\n\n");
+  char cpf[40];
+  char arquivo[45];
+
+  system("clear"); // Limpar a tela
+  printf("\033[1mDeletar usuário:\033[0m\n\n");
+
+  printf("\033[1mDigite o CPF que você quer deletar: \033[0m");
+  scanf("%s", cpf);
+
+  sprintf(arquivo, "%s.md", cpf); 
+
+  FILE *file = fopen(arquivo, "r");
+
+  if (file == NULL) {
+      printf("\033[1mUsuário inexistente:\033[0m O arquivo %s não foi encontrado.\n", arquivo);
+      return; 
+  }
+
+  fclose(file); 
+
+  // Se o arquivo existe, tenta deletá-lo
+  if (remove(arquivo) == 0) {
+      printf("\033[1mSucesso:\033[0m O usuário cadastrado com o CPF %s foi deletado com sucesso.\n", cpf);
+  } else {
+      printf("\033[1mErro:\033[0m Não foi possível deletar o arquivo %s.\n", arquivo);
+  }
 }
 
 
