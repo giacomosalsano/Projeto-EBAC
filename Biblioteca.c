@@ -33,7 +33,7 @@ int verificar_arquivo_existe(const char *cpf) {
 
 void sair() {
     system("clear"); // Limpar a tela
-    printf("Opção escolhida: Sair.\n");
+    printf("\033[1mOpção escolhida: Sair.\n\nObrigado por utilizar o Cartório da EBAC\033[0m\n\n");
 }
 
 void registrar() {
@@ -65,29 +65,29 @@ void registrar() {
       return;
   }
 
-  fprintf(file, "#Dados do usuário:\n\n");  
-  fprintf(file, "**CPF:** %s;\n", cpf);  // Salva o valor da variável "cpf"
+  fprintf(file, "# Dados do usuário:\n\n");  
+  fprintf(file, "**CPF:** %s;\n\n", cpf);  // Salva o valor da variável "cpf"
   fclose(file); // Fecha o arquivo
 
   printf("\033[1mDigite o Nome a ser cadastrado: \033[0m");
   scanf("%s", nome);
 
   file = fopen(arquivo, "a"); // "a" para Abrir
-  fprintf(file, "**Nome:** %s;\n", nome);  
+  fprintf(file, "**Nome:** %s;\n\n", nome);  
   fclose(file); 
 
   printf("\033[1mDigite o Sobrenome a ser cadastrado: \033[0m");
   scanf("%s", sobrenome);
 
   file = fopen(arquivo, "a"); 
-  fprintf(file, "**Sobrenome:** %s;\n", sobrenome); 
+  fprintf(file, "**Sobrenome:** %s;\n\n", sobrenome); 
   fclose(file);
 
   printf("\033[1mDigite o Cargo a ser cadastrado:\033[0m ");
   scanf("%s", cargo);
 
   file = fopen(arquivo, "a");
-  fprintf(file, "**Cargo:** %s.\n", cargo); // Salva o valor da variável "cargo"
+  fprintf(file, "**Cargo:** %s.\n\n", cargo); // Salva o valor da variável "cargo"
   fclose(file);
 
   testar_arquivo_criado(arquivo); // Teste para verificar se o "arquivo" foi criado
@@ -116,7 +116,7 @@ void consultar() {
   if (file == NULL)
   {
       printf("\033[1mUsuário inexistente\033[0m\n");
-      printf("\033[1mRegistrar novo usuário?\033[0m\n");
+      printf("\033[1mRegistrar um novo usuário?\033[0m\n");
         while (laco_consultar == 1) {
           printf("\t1 - Sim.\n");
           printf("\t2 - Não.\n");
@@ -133,7 +133,7 @@ void consultar() {
               laco_consultar = 0;
           } else {
               printf("\nOpção inválida. Tente novamente.\n");
-              printf("\033[1mRegistrar novo usuário?\033[0m\n");
+              printf("\033[1mRegistrar um novo usuário?\033[0m\n");
 
           }
         }
@@ -144,9 +144,7 @@ void consultar() {
       printf("%s", conteudo);
   }
 
-
-
-
+  fclose(file);
 }
 
 void deletar() {
@@ -180,12 +178,15 @@ int main() {
         switch (opcaoUsuario) {
             case 1:
                 registrar();
+                aguardarEnter();
                 break;
             case 2:
                 consultar();
+                aguardarEnter();
                 break;
             case 3:
                 deletar();
+                aguardarEnter();
                 break;
             case 4:
                 sair();
@@ -195,8 +196,6 @@ int main() {
                 printf("Opção inválida.\n");
                 break;
         }
-
-       aguardarEnter();
     }
 
     return 0;
