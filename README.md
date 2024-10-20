@@ -5,7 +5,7 @@
 - **Curso:** TI do Zero
 - **Projeto:** Registro de Nomes
 - **Versão:** 1.0
-- **Stacks:** C++ (Biblioteca.c)
+- **Stacks:** C++ (Biblioteca.cpp)
 
 ---
 
