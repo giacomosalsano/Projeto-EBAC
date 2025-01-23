@@ -1,12 +1,11 @@
 # Registro de Nomes - Documentação de Arquitetura de Software
 
 ## 1. Informações Gerais
-- **Instituição:** EBAC
-- **Curso:** TI do Zero
-- **Projeto:** Registro de Nomes
-- **Versão:** 1.0
-- **Stacks:** C++ (Biblioteca.cpp)
-
+- **Instituição:** EBAC;
+- **Curso:** TI do Zero;
+- **Projeto:** Registro de Nomes;
+- **Versão:** 1.0;
+- **Stacks:** C++, HTML & CSS;
 - **Rodar o Projeto:** `npm run dev`
 - **Senha:** `admin`
 
