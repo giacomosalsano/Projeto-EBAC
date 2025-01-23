@@ -7,6 +7,9 @@
 - **Versão:** 1.0
 - **Stacks:** C++ (Biblioteca.cpp)
 
+- **Rodar o Projeto:** `npm run dev`
+- **Senha:** `admin`
+
 ---
 
 ## 2. Descrição Geral

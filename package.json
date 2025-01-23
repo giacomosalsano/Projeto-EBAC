@@ -2,5 +2,8 @@
   "dependencies": {
     "clang": "^1.0.9",
     "iostream": "^0.0.3"
+  },
+  "scripts": {
+    "dev": "clear && cd '/Users/giacomino/www/Projeto EBAC/' && g++ Biblioteca.cpp -o Biblioteca && '/Users/giacomino/www/Projeto EBAC/'Biblioteca"
   }
 }

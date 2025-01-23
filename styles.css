@@ -1,0 +1,83 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+body {
+  font-family: Inter, sans-serif;
+  background-color: #F5E3D4;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-weight: bold;
+  color: #FF7900;
+  text-align: center;  
+  margin-top: 20px;
+}
+
+h2 {
+  font-weight: bold;
+  color: #6A0DAD;
+  text-align: center;  
+  margin-top: 20px;
+}
+
+h3 {
+  font-weight: bold;
+  color: #6A0DAD;
+  text-align: center;  
+  margin-top: 20px;
+}
+
+h4 [class=h4InputTitle] {
+  font-weight: bold;
+  color: #3C3C3C;
+  margin-right: 10px;
+}
+
+div [class=loginDiv] {
+  margin-top: 6rem;
+}
+
+div [class=inputDiv] {
+  margin-top: 20px;
+  text-align: center; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+input {  
+    background-color: #F6F6F6;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+
+button {  
+  font-family: Inter, sans-serif;
+  font-weight: bold;
+  font-size: 1rem; /* Aproximadamente 40px */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #F6F6F6;
+  background-color: #6A0DAD;
+  padding: 0.5rem 2rem 0.5rem 2rem;
+  border: 1px solid #ddd;
+  border-radius: 99rem;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  margin: auto;
+}
+
+button:hover {  
+  background-color: #22053D;
+}
+

@@ -52,8 +52,9 @@ typedef struct { // "Tipagem" da função menuOptionsFunction
     void (*functionOpcao4)();
     const char *invalidOptionMessage;
     const char *feedbackMessage;
-} MenuOptions;
-void menuOptionsFunction(MenuOptions *options) //Função para o Menu
+} MenuOptionsProps;
+
+void menuOptionsFunction(MenuOptionsProps *options) //Função para o Menu
 {
     setlocale(LC_ALL, "Portuguese");
     
@@ -121,9 +122,26 @@ void menuOptionsFunction(MenuOptions *options) //Função para o Menu
 
             }
     }
-    
-
 }
+
+
+int login() {
+    char senhaDoSistema[10]="admin";
+    char senhaDigitada[10];
+
+    system(CLEAR_COMMAND);
+
+    printf("\033[1mOlá, seja bem-vindo(a) ao Registro de Nomes da EBAC\033[0m\n\n");
+
+    printf("Digite a senha para acessar o sistema: ");
+    scanf("%s", senhaDigitada);
+
+    if (strcmp(senhaDoSistema, senhaDigitada) == 0) {
+        return 1;
+    } else { 
+        return 0;
+    }
+};
 
 void testarArquivoCriadoFunction(const char *cpf) 
 {
@@ -149,7 +167,7 @@ int verificarArquivoExistenteFunction(const char *cpf) // Verifica se o arquivo 
 
 void sair() {
     system(CLEAR_COMMAND); // Limpar a tela
-    printf("\033[1mOpção escolhida: Sair.\n\nObrigado por utilizar o Cartório da EBAC\033[0m\n\n");
+    printf("\033[1mOpção escolhida: Sair.\n\nObrigado por utilizar o Registro de Nomes da EBAC!\033[0m\n\n");
 }
 
 void registrar() {
@@ -218,7 +236,7 @@ void consultar() {
   char cpf[40];
   char conteudo[1000];
   int opcaoUsuario = 0;
-  int laco_consultar = 1;
+  int lacoConsultar = 1;
 
   system(CLEAR_COMMAND); // Limpar a tela
   printf("\033[1mConsultar usuário:\033[0m\n\n");
@@ -238,7 +256,7 @@ void consultar() {
   {     
     printf("\033[1mUsuário inexistente\033[0m\n");
     printf("\033[1mRegistrar um novo usuário?\033[0m\n");
-    while (laco_consultar == 1) {
+    while (lacoConsultar == 1) {
         printf("\t1 - Sim.\n");
         printf("\t2 - Sair.\n");
         printf("\nOpção: ");
@@ -247,11 +265,11 @@ void consultar() {
         if (opcaoUsuario == 1) {
             system(CLEAR_COMMAND);
             registrar();
-            laco_consultar = 0;
+            lacoConsultar = 0;
         } else if (opcaoUsuario == 2) {
             system(CLEAR_COMMAND);
             sair();
-            laco_consultar = 0;
+            lacoConsultar = 0;
         } else {
             printf("\nOpção inválida. Tente novamente.\n");
             printf("\033[1mRegistrar um novo usuário?\033[0m\n");
@@ -309,8 +327,8 @@ void deletar() {
 
 int main() {
     setlocale(LC_ALL, "pt_BR.UTF-8");
-    MenuOptions menu = {
-        .header = "###### Cartório da EBAC ######",
+    MenuOptionsProps menu = {
+        .header = "###### Registro de Nomes da EBAC ######",
         .welcomeMessage = "Olá, seja bem-vindo(a)!",
         .commandMessage = "Escolha a opção desejada do menu:",
         .menu1 = "Registrar usuário",
@@ -324,7 +342,28 @@ int main() {
         .invalidOptionMessage = "Opção inválida!",
         .feedbackMessage = "Tente novamente"
     };
-    menuOptionsFunction(&menu);
+
+
+    int loginResult;
+    do {
+        loginResult = login();
+        if (loginResult == 1) {
+            system(CLEAR_COMMAND);
+            menuOptionsFunction(&menu);
+        } else {
+            system(CLEAR_COMMAND);
+            printf("Senha Inválida! Tente Novamente!\n\n");
+            printf("Deseja tentar novamente?\n\n1 - Sim\n\n2 - Não\n\n");
+            printf("Sua escolha: ");
+            int escolha;
+            scanf("%d", &escolha);
+            if (escolha == 2) {
+                system(CLEAR_COMMAND);
+                printf("\033[1mObrigado por utilizar o Registro de Nomes da EBAC!\033[0m\n\n");
+                break;
+            }
+        }
+    } while (loginResult != 1);
 
     return 0;
 
