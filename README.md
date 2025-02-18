@@ -35,7 +35,7 @@ The system includes functionalities for:
 
 ## 3. Definitions, Acronyms, and Abbreviations
 
-- **CPF:** Cadastro de Pessoa Física, a number used in Brazil to identify citizens;
+- **CPF:** Cadastro de Pessoa Física ("_Individual Taxpayer Registry_"), a number used in Brazil to identify citizens;
 - **C++:** Programming language used to develop the project;
 - **Biblioteca.c:** Set of standard C++ libraries used in the project (stdio.h, string.h, etc);
 - **TDD:** Test Driven Development, a simple approach used to ensure the correct creation of files;
@@ -110,7 +110,7 @@ The main logic of the system is centered around the following functions:
 The system follows the flow:
 1. The user chooses an option from the menu (register or query);
 2. In the registration, the system collects the data and validates the CPF;
-3. In the query process, the system searches for the file corresponding to the [CPF](#Definitions-Acronyms-and-Abbreviations);
+3. In the query process, the system searches for the file corresponding to the CPF;
 4. The system provides feedback to the user with error or success messages.
 
 ---
