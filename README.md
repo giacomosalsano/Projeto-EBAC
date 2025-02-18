@@ -110,7 +110,7 @@ The main logic of the system is centered around the following functions:
 The system follows the flow:
 1. The user chooses an option from the menu (register or query);
 2. In the registration, the system collects the data and validates the **[CPF](#definitions-acronyms-and-abbreviations)**;
-3. In the query process, the system searches for the file corresponding to the **[CPF](#definitions-acronyms-and-abbreviations)**;
+3. In the query process, the system searches for the file corresponding to the **[CPF](#Definitions-Acronyms-and-Abbreviations)**;
 4. The system provides feedback to the user with error or success messages.
 
 ---
