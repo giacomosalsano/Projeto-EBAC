@@ -17,7 +17,7 @@ Here is the translation of the documentation into English, keeping the terminolo
 
 ## 2. General Description
 
-The **Registro de Nomes** project is a simple application developed in C++ that allows the registration of users with **[CPF](#definitions-acronyms-and-abbreviations)**, first name, last name, and job title. The information is saved in `.md` files with the user's **[CPF](#definitions-acronyms-and-abbreviations)** as the file name, and the content includes the registered personal data.
+The **Registro de Nomes** project is a simple application developed in C++ that allows the registration of users with CPF, first name, last name, and job title. The information is saved in `.md` files with the user's CPF as the file name, and the content includes the registered personal data.
 
 ### 2.1 Purpose
 
@@ -26,8 +26,8 @@ This project aims to implement a basic information registration system that stor
 ### 2.2 Scope
 
 The system includes functionalities for:
-- User registration (**[CPF](#definitions-acronyms-and-abbreviations)**, first name, last name, job title);
-- Checking for duplicate **[CPF](#definitions-acronyms-and-abbreviations)**;
+- User registration (CPF, first name, last name, job title);
+- Checking for duplicate CPF;
 - Querying registered user data;
 - Displaying error and success messages to the user.
 
@@ -84,13 +84,13 @@ The project architecture follows the **Client-Server** pattern, where:
 
 ### Use Cases:
 1. **Register User:**
-   - Input: **[CPF](#definitions-acronyms-and-abbreviations)**, first name, last name, job title;
-   - Validations: Verifies if the **[CPF](#definitions-acronyms-and-abbreviations)** has 11 digits and if it has already been registered;
+   - Input: CPF, first name, last name, job title;
+   - Validations: Verifies if the CPF has 11 digits and if it has already been registered;
    - Output: File with the registered user's data.
 
 2. **Query User:**
-   - Input: **[CPF](#definitions-acronyms-and-abbreviations)**;
-   - Output: Displays the user data corresponding to the **[CPF](#definitions-acronyms-and-abbreviations)** if found.
+   - Input: CPF;
+   - Output: Displays the user data corresponding to the CPF if found.
 
 ---
 
@@ -99,9 +99,9 @@ The project architecture follows the **Client-Server** pattern, where:
 The main logic of the system is centered around the following functions:
 
 - `registrar()`: Handles user registration and saves the information in files;
-- `consultar()`: Allows the user to query a previously registered **[CPF](#definitions-acronyms-and-abbreviations)**;
-- `validarCPF()`: Verifies if the **[CPF](#definitions-acronyms-and-abbreviations)** is valid and contains only numeric characters;
-- `verificarArquivoExistenteFunction()`: Checks if a file (**[CPF](#definitions-acronyms-and-abbreviations)**) has already been registered previously.
+- `consultar()`: Allows the user to query a previously registered CPF;
+- `validarCPF()`: Verifies if the CPF is valid and contains only numeric characters;
+- `verificarArquivoExistenteFunction()`: Checks if a file (CPF) has already been registered previously.
 
 ---
 
@@ -109,8 +109,8 @@ The main logic of the system is centered around the following functions:
 
 The system follows the flow:
 1. The user chooses an option from the menu (register or query);
-2. In the registration, the system collects the data and validates the **[CPF](#definitions-acronyms-and-abbreviations)**;
-3. In the query process, the system searches for the file corresponding to the **[CPF](#Definitions-Acronyms-and-Abbreviations)**;
+2. In the registration, the system collects the data and validates the CPF;
+3. In the query process, the system searches for the file corresponding to the [CPF](#Definitions-Acronyms-and-Abbreviations);
 4. The system provides feedback to the user with error or success messages.
 
 ---
