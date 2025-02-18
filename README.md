@@ -1,161 +1,165 @@
-# Registro de Nomes - Documentação de Arquitetura de Software
+Here is the translation of the documentation into English, keeping the terminology in Portuguese:
 
-## 1. Informações Gerais
-- **Instituição:** EBAC;
-- **Curso:** TI do Zero;
-- **Projeto:** Registro de Nomes;
-- **Versão:** 1.0;
+---
+
+# Registro de Nomes - Software Architecture Documentation
+
+## 1. General Information
+- **Institution:** EBAC;
+- **Course:** TI do Zero;
+- **Project:** Registro de Nomes ("_Name Registration_");
+- **Version:** 1.0;
 - **Stacks:** C++, HTML & CSS;
-- **Rodar o Projeto:** `npm run dev`
-- **Senha:** `admin`
+- **Run the Project:** `npm run dev`
+- **Password:** `admin`
 
 ---
 
-## 2. Descrição Geral
+## 2. General Description
 
-O projeto **Registro de Nomes** é uma aplicação simples desenvolvida em C++ que permite o cadastro de usuários com CPF, nome, sobrenome e cargo. As informações são salvas em arquivos `.md` com o CPF do usuário como nome do arquivo, e o conteúdo inclui os dados pessoais registrados.
+The **Registro de Nomes** project is a simple application developed in C++ that allows the registration of users with **[CPF](#definitions-acronyms-and-abbreviations)**, first name, last name, and job title. The information is saved in `.md` files with the user's **[CPF](#definitions-acronyms-and-abbreviations)** as the file name, and the content includes the registered personal data.
 
-### 2.1 Finalidade
+### 2.1 Purpose
 
-Este projeto tem como objetivo implementar um sistema básico de registro de informações que armazena os dados em arquivos locais. Ele é projetado para aprender e aplicar conceitos fundamentais de manipulação de arquivos, estrutura de dados e controle de fluxo em C++.
+This project aims to implement a basic information registration system that stores data in local files. It is designed to learn and apply fundamental concepts of file manipulation, data structures, and flow control in C++.
 
-### 2.2 Escopo
+### 2.2 Scope
 
-O sistema inclui funcionalidades de:
-- Cadastro de usuário (CPF, nome, sobrenome, cargo);
-- Verificação de CPF duplicado;
-- Consulta de dados de usuários cadastrados;
-- Exibição de mensagens de erro e sucesso ao usuário.
-
----
-
-## 3. Definições, Acrônimos e Abreviações
-
-- **CPF:** Cadastro de Pessoa Física, um número utilizado no Brasil para identificar cidadãos;
-- **C++:** Linguagem de programação utilizada para desenvolver o projeto;
-- **Biblioteca.c:** Conjunto de bibliotecas padrões de C++ utilizadas no projeto (stdio.h, string.h, etc);
-- **TDD:** Test Driven Development (Desenvolvimento Orientado a Testes), abordado de forma simples para garantir a criação dos arquivos de forma correta;
+The system includes functionalities for:
+- User registration (**[CPF](#definitions-acronyms-and-abbreviations)**, first name, last name, job title);
+- Checking for duplicate **[CPF](#definitions-acronyms-and-abbreviations)**;
+- Querying registered user data;
+- Displaying error and success messages to the user.
 
 ---
 
-## 4. Objetivos do Projeto
+## 3. Definitions, Acronyms, and Abbreviations
 
-O objetivo principal deste projeto é consolidar os conceitos aprendidos no curso de TI do Zero da EBAC, com foco em:
-- Manipulação de arquivos;
-- Validação de entradas de dados;
-- Estruturas de controle de fluxo;
-- Implementação de um menu interativo.
-
----
-
-## 5. Índice Analítico
-
-1. Informações Gerais
-2. Descrição Geral
-   - Finalidade
-   - Escopo
-3. Definições, Acrônimos e Abreviações
-4. Objetivos do Projeto
-5. Representação Arquitetural
-6. Visão de Caso de Uso
-7. Visão Lógica
-8. Visão de Processos
-9. Visão de Implantação
-10. Visão da Implementação
-11. Tamanho e Desempenho
-12. Qualidade
-13. Sugestões de Desenvolvimento
+- **CPF:** Cadastro de Pessoa Física, a number used in Brazil to identify citizens;
+- **C++:** Programming language used to develop the project;
+- **Biblioteca.c:** Set of standard C++ libraries used in the project (stdio.h, string.h, etc);
+- **TDD:** Test Driven Development, a simple approach used to ensure the correct creation of files;
 
 ---
 
-## 6. Representação Arquitetural
+## 4. Project Objectives
 
-A arquitetura do projeto segue o padrão **Client-Server**, onde:
-- O **cliente** interage através de um menu no terminal;
-- O **servidor** é o próprio sistema, que processa os dados fornecidos pelo usuário e armazena essas informações localmente em arquivos.
-
----
-
-## 7. Visão de Caso de Uso
-
-### Casos de Uso:
-1. **Registrar Usuário:**
-   - Entrada: CPF, nome, sobrenome, cargo;
-   - Validações: Verifica se o CPF possui 11 dígitos e se já foi cadastrado;
-   - Saída: Arquivo com os dados do usuário registrado.
-
-2. **Consultar Usuário:**
-   - Entrada: CPF;
-   - Saída: Exibe os dados do usuário correspondente ao CPF, se encontrado.
+The main goal of this project is to consolidate the concepts learned in the **EBAC - TI do Zero** course, focusing on:
+- File manipulation;
+- Data input validation;
+- Flow control structures;
+- Implementing an interactive menu.
 
 ---
 
-## 8. Visão Lógica
+## 5. Analytical Index
 
-A lógica principal do sistema está centralizada nas seguintes funções:
-
-- `registrar()`: Realiza o processo de cadastro de usuários e salva as informações em arquivos;
-- `consultar()`: Permite que o usuário consulte um CPF previamente cadastrado;
-- `validarCPF()`: Verifica se o CPF é válido e se possui apenas caracteres numéricos;
-- `verificarArquivoExistenteFunction()`: Confirma se um arquivo (CPF) já foi cadastrado anteriormente.
-
----
-
-## 9. Visão de Processos
-
-O sistema segue o fluxo:
-1. O usuário escolhe uma opção no menu (registrar ou consultar);
-2. No registro, o sistema coleta os dados e valida o CPF;
-3. No processo de consulta, o sistema busca o arquivo correspondente ao CPF;
-4. O sistema exibe feedbacks ao usuário com mensagens de erro ou sucesso.
-
----
-
-## 10. Visão de Implantação
-
-- O projeto foi desenvolvido para rodar diretamente no terminal, em qualquer sistema operacional. Para garantir compatibilidade com diferentes sistemas, a limpeza da tela usa uma macro condicional:
-  - No Windows: `cls`
-  - Em sistemas Unix-based: `clear`
+1. General Information
+2. General Description
+   - Purpose
+   - Scope
+3. Definitions, Acronyms, and Abbreviations
+4. Project Objectives
+5. Architectural Representation
+6. Use Case View
+7. Logical View
+8. Process View
+9. Deployment View
+10. Implementation View
+11. Size and Performance
+12. Quality
+13. Development Suggestions
 
 ---
 
-## 11. Visão da Implementação
+## 6. Architectural Representation
 
-O código foi implementado em C++, usando as bibliotecas padrão para entrada e saída de dados, manipulação de strings e manipulação de arquivos. As funções principais e estruturas de controle foram definidas para garantir uma execução simples e eficiente.
-
----
-
-## 12. Tamanho e Desempenho
-
-### Tamanho:
-- Cada registro de usuário é salvo em um arquivo `.md`, e o tamanho dos arquivos dependerá da quantidade de dados cadastrados.
-  
-### Desempenho:
-- O desempenho do sistema é adequado para o propósito de registro simples, com baixo consumo de memória e tempo de execução rápido devido à natureza das operações.
+The project architecture follows the **Client-Server** pattern, where:
+- The **client** interacts through a menu in the terminal;
+- The **server** is the system itself, which processes the data provided by the user and stores this information locally in files.
 
 ---
 
-## 13. Qualidade
+## 7. Use Case View
 
-A qualidade do código é garantida pelo uso de boas práticas (Clean Code), como:
-- Validação de entradas de dados;
-- Uso de estruturas de controle para evitar erros;
-- Mensagens claras de feedback ao usuário;
-- Simulação de TDD para garantir a criação de arquivos corretos.
+### Use Cases:
+1. **Register User:**
+   - Input: **[CPF](#definitions-acronyms-and-abbreviations)**, first name, last name, job title;
+   - Validations: Verifies if the **[CPF](#definitions-acronyms-and-abbreviations)** has 11 digits and if it has already been registered;
+   - Output: File with the registered user's data.
+
+2. **Query User:**
+   - Input: **[CPF](#definitions-acronyms-and-abbreviations)**;
+   - Output: Displays the user data corresponding to the **[CPF](#definitions-acronyms-and-abbreviations)** if found.
 
 ---
 
-## 14. Sugestões de Desenvolvimento
+## 8. Logical View
 
-### 14.1 Desenvolvimento do FrontEnd
-- Como o sistema é executado no terminal, um futuro desenvolvimento poderia envolver a criação de uma interface gráfica (GUI) para melhorar a experiência do usuário.
+The main logic of the system is centered around the following functions:
 
-### 14.2 Aprimoramento do BackEnd
-- Implementar uma camada de segurança para criptografar os dados salvos.
-- Expandir as funcionalidades de manipulação de dados, como edição ou exclusão de registros.
+- `registrar()`: Handles user registration and saves the information in files;
+- `consultar()`: Allows the user to query a previously registered **[CPF](#definitions-acronyms-and-abbreviations)**;
+- `validarCPF()`: Verifies if the **[CPF](#definitions-acronyms-and-abbreviations)** is valid and contains only numeric characters;
+- `verificarArquivoExistenteFunction()`: Checks if a file (**[CPF](#definitions-acronyms-and-abbreviations)**) has already been registered previously.
 
-### 14.3 Novas Funcionalidades
-- **Backup de Dados:** Criar uma função que automatize o backup dos arquivos de registro;
-- **Tratativa de Erros:** Melhorar o tratamento de erros, como falhas no sistema de arquivos ou na entrada de dados;
-- **Conectividade:** Integrar o sistema a um banco de dados remoto para possibilitar a consulta e o registro de usuários de forma centralizada;
-- **Monitoria de Usuários:** Adicionar a funcionalidade de monitoramento e geração de logs para acompanhar o uso do sistema.
+---
+
+## 9. Process View
+
+The system follows the flow:
+1. The user chooses an option from the menu (register or query);
+2. In the registration, the system collects the data and validates the **[CPF](#definitions-acronyms-and-abbreviations)**;
+3. In the query process, the system searches for the file corresponding to the **[CPF](#definitions-acronyms-and-abbreviations)**;
+4. The system provides feedback to the user with error or success messages.
+
+---
+
+## 10. Deployment View
+
+- The project was developed to run directly in the terminal on any operating system. To ensure compatibility with different systems, the screen clearing uses a conditional macro:
+  - On Windows: `cls`
+  - On Unix-based systems: `clear`
+
+---
+
+## 11. Implementation View
+
+The code was implemented in C++, using standard libraries for input and output data, string manipulation, and file handling. The main functions and control structures were defined to ensure simple and efficient execution.
+
+---
+
+## 12. Size and Performance
+
+### Size:
+- Each user record is saved in a `.md` file, and the file size will depend on the amount of data registered.
+
+### Performance:
+- The system’s performance is adequate for the purpose of simple registration, with low memory consumption and fast execution time due to the nature of the operations.
+
+---
+
+## 13. Quality
+
+The quality of the code is ensured through the use of best practices (Clean Code), such as:
+- Data input validation;
+- Use of control structures to avoid errors;
+- Clear feedback messages to the user;
+- Simulated TDD to ensure the correct creation of files.
+
+---
+
+## 14. Development Suggestions
+
+### 14.1 FrontEnd Development
+- Since the system runs in the terminal, future development could involve creating a graphical user interface (GUI) to improve the user experience.
+
+### 14.2 BackEnd Improvement
+- Implement a security layer to encrypt the stored data.
+- Expand data manipulation functionalities, such as editing or deleting records.
+
+### 14.3 New Features
+- **Data Backup:** Create a function that automates the backup of registration files;
+- **Error Handling:** Improve error handling, such as failures in the file system or data input;
+- **Connectivity:** Integrate the system with a remote database to enable centralized user registration and querying;
+- **User Monitoring:** Add functionality for monitoring and generating logs to track the system's usage.
