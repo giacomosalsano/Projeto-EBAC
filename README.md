@@ -1,7 +1,3 @@
-Here is the translation of the documentation into English, keeping the terminology in Portuguese:
-
----
-
 # Registro de Nomes - Software Architecture Documentation
 
 ## 1. General Information
